@@ -6,8 +6,13 @@ import { Input } from './Input'
 export const AddTodo = () => {
   const [input, setInput] = useState<string>('')
 
+  const handleSubmission = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log('form has been submitted')
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmission}>
       <div className="flex items-center w-full max-w-lg gap-2 p-5 m-auto">
         <input
           value={input}
