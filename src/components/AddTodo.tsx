@@ -5,7 +5,7 @@ import { Input } from './Input'
 
 export const AddTodo = () => {
   const [input, setInput] = useState<string>('')
-  const [todos, setTodos] = useState<string[]>([])
+  const { addTodo } = useTodo()
 
   const inputRef = useRef<HTMLInputElement>(null)
 
@@ -19,12 +19,13 @@ export const AddTodo = () => {
     e.preventDefault()
 
     if (input.trim() !== '') {
-      setTodos([...todos, input])
+      addTodo(input)
       setInput('')
+      toast.success('Todo added successfully!')
+    } else {
+      toast.error('Todo field cannot be empty!')
     }
   }
-
-  console.log(todos, 'todos')
 
   return (
     <form onSubmit={handleSubmission}>
