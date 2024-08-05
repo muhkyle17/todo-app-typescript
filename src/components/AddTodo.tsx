@@ -5,9 +5,8 @@ import { Input } from './Input'
 
 export const AddTodo = () => {
   const [input, setInput] = useState<string>('')
-  const { addTodo } = useTodo()
-
   const inputRef = useRef<HTMLInputElement>(null)
+  const { addTodo } = useTodo()
 
   useEffect(() => {
     if (inputRef.current) {

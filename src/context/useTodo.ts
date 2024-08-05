@@ -8,7 +8,7 @@ export const useTodo = () => {
     throw new Error('useTodo must be within a TodoProvider')
   }
 
-  console.log(context)
+  console.log(context, 'context')
 
   return context
 }
