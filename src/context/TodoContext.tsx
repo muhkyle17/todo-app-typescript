@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext } from 'react'
 import { nanoid } from 'nanoid'
 import { useLocalStorage } from 'usehooks-ts'
 
@@ -21,7 +21,7 @@ export const TodoContext = createContext<TodoContextProps | undefined>(
 )
 
 export const TodoProvider = (props: { children: React.ReactNode }) => {
-  const [todos, setTodos] = useState<Todo[]>([])
+  const [todos, setTodos] = useLocalStorage<Todo[]>('todos', [])
 
   const addTodo = (text: string) => {
     const newTodo: Todo = {
