@@ -20,7 +20,6 @@ export const TodoContext = createContext<TodoContextProps | undefined>(
 export const TodoProvider = (props: { children: React.ReactNode }) => {
   const [todos, setTodos] = useState<Todo[]>([])
 
-  // ::: ADD NEW TODO :::
   const addTodo = (text: string) => {
     const newTodo: Todo = {
       id: nanoid(),

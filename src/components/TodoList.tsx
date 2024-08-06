@@ -5,8 +5,6 @@ import { SiStarship } from 'react-icons/si'
 export const TodoList = () => {
   const { todos } = useTodo()
 
-  console.log(todos, 'todos')
-
   if (!todos.length) {
     return (
       <div className="max-w-lg px-5 m-auto">
