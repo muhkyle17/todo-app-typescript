@@ -43,6 +43,7 @@ export const TodoProvider = (props: { children: React.ReactNode }) => {
         if (todo.id === id) {
           return { ...todo, text }
         }
+
         return todo
       })
     })

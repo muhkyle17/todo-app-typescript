@@ -20,8 +20,6 @@ export const TodoItem = (props: { todo: Todo }) => {
 
   const editInputRef = useRef<HTMLInputElement>(null)
 
-  console.log(editInputRef, 'editInputRef')
-
   useEffect(() => {
     if (editingTodoId !== null && editInputRef.current) {
       editInputRef.current.focus()
